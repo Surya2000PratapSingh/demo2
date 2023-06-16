@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Blog Website</title>
+  <link rel="stylesheet" href="/styling/Styling.css">
+ 
+</head>
+<body>
+  <header>
+    <div>
+        <img src="/Icons/logo_transparent.png" alt="Logo"> 
+        <a class="scroll" href="#blogs">Blogs</a>
+        <a class="scroll" href="#news">News Feeds</a>
+        <a class="scroll" href="#events">Upcoming Events</a>
+        <a class="scroll" href="#jobs">Jobs</a>       
+
+  </header>
+
+  <main>
+    <section class="word">
+        <div>
+           <div style="font-size: 65px;margin-bottom: 0px; font-weight: 800">Turn your idea</div>
+            <div style="font-size: 65px; font-weight: 800; color: rgba(219, 43, 43, 0.849)">into a business</div>
+        </div>
+    </section>
+    <section id="blogs"class="blogs">
+        <h2 style="padding-left: 20px;margin-bottom: 40px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 40px;">Blog Section</h2>    
+        <div class="blog-tiles">
+          <a href="blog1.html" class="blog-tile">
+            <img src="/Icons/blog-1.avif" alt="Image 1">
+            <h3>Section 1</h3>
+          </a>
+          <a href="blog2.html" class="blog-tile">
+            <img src="/Icons/blog-2.jpg" alt="Image 2">
+            <h3>Section 2</h3>
+          </a>
+          <a href="blog3.html" class="blog-tile">
+            <img src="/Icons/blog-3.jpg" alt="Image 3">
+            <h3>Section 3</h3>
+          </a>
+        </div>
+      </section>
+      
+
+    <section id="news">
+      <h2>News Feeds</h2>
+      <div class="news-feed">
+        <rssapp-wall id="9qSHDQe3fMrdOEWA"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>            
+      </div>
+    </section>
+
+    <section id="events">
+        <h2>Upcoming Events</h2>
+      <div class="slider">
+        <div id="frame">
+            <input type="radio" name="frame" id="frame1" checked />
+            <input type="radio" name="frame" id="frame2" />
+            <input type="radio" name="frame" id="frame3" />
+            <div id="slides">
+                <div id="overflow">
+                    <div class="inner">
+                        <div class="frame">
+                            <img src="/Icons/church-upcoming-events.jpg">
+                        </div>
+                        <div class="frame">
+                            <img src="/Icons/event_2.webp">
+                        </div>
+                        <div class="frame">
+                            <img src="/Icons/event_3.jpeg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="controls">
+                <label for="frame1"></label>
+                <label for="frame2"></label>
+                <label for="frame3"></label>
+            </div>
+            <div id="bullets">
+                <label for="frame1"></label>
+                <label for="frame2"></label>
+                <label for="frame3"></label>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="jobs">
+      <div class="jobs">
+        <h2 style="padding-left: 20px;margin-bottom: 40px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 40px;">Jobs</h2>
+        <div>
+          <rssapp-imageboard id="Ygikr7aZbvV0bJ76"></rssapp-imageboard>
+          <script src="https://widget.rss.app/v1/imageboard.js" type="text/javascript" async></script>
+        </div>           
+      </div>
+    </section>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  </main>
+  <script>
+    let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  // Get all elements with the 'scroll' class
+  var scrollLinks = document.getElementsByClassName('scroll');
+
+  // Add click event listener to each scroll link
+  Array.from(scrollLinks).forEach(function(link) {
+    link.addEventListener('click', smoothScroll);
+  });
+
+  // Smooth scroll function
+  function smoothScroll(event) {
+    event.preventDefault();
+    var targetId = this.getAttribute('href').substring(1);
+    var targetElement = document.getElementById(targetId);
+    var targetPosition = targetElement.offsetTop;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  }
+});
+
+  </script>
+</body>
+</html>
